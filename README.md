@@ -1,6 +1,6 @@
 # amp_cs
 Approximate message passing (AMP) for compressed sensing (CS) signal recovery.
-* CS model: y = np.dot(A,x) + noise
+* CS model: y = A * x + noise
 * Goal: recover signal x given y and A
 
 ## AMP_mmse_denoiser.ipynb
