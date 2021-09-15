@@ -1,3 +1,8 @@
+# AMP for signal recovery in compressed sensing.
+# CS model: y = Ax + noise
+# Goal: recover x given y and A
+# Copyright (c) 2021 Kuan Hsieh
+
 import numpy as np
 import matplotlib.pyplot as plt
 from numpy import linalg as LA
