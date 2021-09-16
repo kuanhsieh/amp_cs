@@ -26,3 +26,7 @@ Compares the distributions of the effective observation term s^t = x^t + A^T * z
 We see that for the AMP, the distribution is close to Gaussian, with mean close to the correct value (the signal value x), whereas for the IST, the distribution does not have the correct mean and is not Gaussian.
 
 Note: the only difference between the AMP algorithm and the IST algorithm is that the AMP has additional "Onsager" correction term in the calculation of the residual vector at each iteration.
+
+## AMP_cs_image_fast_transform.ipynb
+
+Uses the AMP decoder for signal recovery in compressed sensing (CS) for images. Due to the high-dimensionality of images, we use a subsampled discrete cosine transform (DCT) sensing matrix and the DCT fast transform to reduce computational complexity.
