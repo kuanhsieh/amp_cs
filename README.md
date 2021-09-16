@@ -3,6 +3,12 @@ Approximate message passing (AMP) for compressed sensing (CS) signal recovery.
 * CS model: y = A * x + noise
 * Goal: recover signal x given y and A
 
+## state_evolution.ipynb
+
+Compares the empirical average mean-squared error (MSE) of AMP decoding over many random decoding instances with its prediction from state evolution (SE).
+
+We see that SE gives an accurate prediction of the per-iteration MSE of AMP decoders.
+
 ## AMP_mmse_denoiser.ipynb
 
 Compares the mean squared error (MSE) performance of AMP decoders with soft-thresholding denoisers and minimum MSE (MMSE) denoisers, assuming the signal distribution is known to the decoder.

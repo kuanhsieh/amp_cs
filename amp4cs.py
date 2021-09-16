@@ -228,3 +228,39 @@ def amp_bg(y, A, x, z, eps, v=1):
     z = y - np.dot(A,x) + b*z
 
     return (x, z)
+
+##### State evolution #####
+
+def se(eps, delta, sigma, iter_max, nsamples=10000):
+    '''State evolution (SE) for AMP decoder with soft-thresholding 
+    denoiser and signal entries drawn from 3-point distribution with 
+    probability (1-eps) equal to 0 and probability eps/2 equal to 
+    either +1 or -1.
+    
+    Inputs
+        eps  : sparsity ratio (num of non-zero entries / signal dimension)
+        delta: sensing matrix (num of measurements / signal dimension)
+        sigma: measurement noise standard deviation
+        iter_max: number of iterations to run SE
+        nsamples: num of Monte Carlo samples used to evaluate expectation
+        
+    Outputs
+        psi: SE variable that tracks AMP's per-iteration MSE
+        tau: SE variable that tracks per-iteration effective noise variance.
+    '''
+    
+    alpha = opt_tuning_param(eps) # Soft-threshold threshold parameter
+    psi = np.ones(iter_max) * eps # Variance of signal entries
+    tau = np.zeros(iter_max)
+
+    for t in range(iter_max-1):
+
+        tau[t] = sigma**2 + psi[t]/delta
+
+        X = np.random.choice([-1,0,1], nsamples, p=[eps/2, 1-eps, eps/2])
+        Z = np.random.randn(nsamples) # noise
+        S = X + np.sqrt(tau[t]) * Z
+        theta    = alpha * np.sqrt(tau[t])
+        psi[t+1] = np.mean((soft_thresh(S, theta) - X)**2)
+
+    return psi, tau
