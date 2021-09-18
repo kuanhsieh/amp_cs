@@ -44,7 +44,7 @@ Note: the MMSE denoiser is the conditional expectation operator.
 
 Uses the AMP decoder for signal recovery in compressed sensing (CS) for images. Due to the high-dimensionality of images, we use a subsampled discrete cosine transform (DCT) sensing matrix and the DCT fast transform to reduce computational complexity.
 
-## References
+## Related articles
 
 * D. L. Donoho, A. Maleki, and A. Montanari, “Message-passing algorithms for compressed sensing,” *Proceedings of the National Academy of Sciences*, vol. 106, no. 45, pp. 18914–18919, 2009.
 
