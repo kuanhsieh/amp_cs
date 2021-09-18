@@ -1,6 +1,7 @@
 # AMP for signal recovery in compressed sensing.
 # CS model: y = Ax + noise
-# Goal: recover x given y and A
+# Goal    : recover x given y and A
+#
 # Copyright (c) 2021 Kuan Hsieh
 
 import numpy as np
