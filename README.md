@@ -6,11 +6,9 @@ Approximate message passing (AMP) for compressed sensing (CS) signal recovery.
 ## Notebooks
 
 ### cs_algo_compare.ipynb
-Compare AMP with other sparse recovery algorithms in compressed sensing.
+Compare AMP with other iterative sparse recovery algorithms in compressed sensing.
 
-We plot the mean squared error in signal reconstruction
-
-Includes:
+We plot the mean squared error in signal reconstruction across iterations for several algorithms:
 1. Approximate message passing with soft-thresholding (AMP)
 2. Iterative soft-thresholding (IST)
 3. Proximal gradient descent (for solving the LASSO)
