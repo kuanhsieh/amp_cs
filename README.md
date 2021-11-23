@@ -1,7 +1,7 @@
 # amp_cs
 Approximate message passing (AMP) for compressed sensing (CS) signal recovery.
 * CS model: y = Ax + noise
-* Goal    : recover signal vector x given measurement vector y and sensing matrix A
+* Goal: recover signal vector x given measurement vector y and sensing matrix A
 
 ## Notebooks
 
