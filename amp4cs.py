@@ -182,8 +182,9 @@ def amp_3pt(y, A, x, z, eps, c=1):
     bot = eps*np.cosh(u,dtype=np.float128) + (1-eps)*np.exp(c**2/(2*tau**2),dtype=np.float128)
     x   = (top / bot).astype(np.float)
     
-    # Calculate residual with the Onsager term
-    b = (N/M) * np.mean(x * (c/np.tanh(u) - x)) / tau**2
+    # Calculate residual with the Onsager term    
+    eta_der = x * (c/np.tanh(u) - x) / tau**2
+    b = (N/M) * np.mean(eta_der)
     z = y - np.dot(A,x) + b*z
 
     return (x, z)
