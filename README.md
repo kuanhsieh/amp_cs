@@ -1,7 +1,7 @@
 # amp_cs
 Approximate message passing (AMP) for compressed sensing (CS) signal recovery.
-* CS model: y = A * x + noise
-* Goal    : recover signal x given y and A
+* CS model: y = Ax + noise
+* Goal: recover signal vector x given measurement vector y and sensing matrix A
 
 ## Notebooks
 
@@ -18,7 +18,7 @@ We plot the mean squared error in signal reconstruction across iterations for se
 
 ### AMP_vs_IST.ipynb
 
-Compares the distributions of the effective observation term s^t = x^t + A^T * z^t of the AMP algorithm and the iterative soft-thresholding (IST) algorithm, where t is the iteration index.
+Compares the distributions of the effective observation term s^t = x^t + A^T z^t of the AMP algorithm and the iterative soft-thresholding (IST) algorithm, where t is the iteration index.
 
 We see that for the AMP, the distribution is close to Gaussian, with mean close to the correct value (the signal value x), whereas for the IST, the distribution does not have the correct mean and is not Gaussian.
 
